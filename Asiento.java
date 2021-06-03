@@ -10,18 +10,17 @@ import java.util.ArrayList;
 public class Asiento 
 {
     private int numero;
-    private boolean disponible;
     private Cliente cliente;
 
     public Asiento(int numero) {
         this.numero = numero;
-        disponible = true;
+        cliente = null;
     }
 
-    public boolean aceptaReserva()
+    public boolean aceptaReserva(Cliente cliente)
     {
-        if( disponible ){
-            disponible = false;
+        if( this.cliente == null ){
+            this.cliente = cliente;
             return true;
         }
         else
@@ -30,20 +29,19 @@ public class Asiento
 
     public boolean cancelaReserva()
     {
-        if( !disponible ){
-            disponible = true;
+        if( this.cliente != null ){
+            cliente = null;
             return true;
         }
         else
             return false;
     }
 
-    public boolean getEstado(){
-        return disponible;
-    }
-
-    public void setCliente(Cliente cliente){
-        this.cliente = cliente;
+    public boolean estaDisponible(){
+        if( cliente == null )
+            return true;
+        else
+            return false;
     }
 
     public Cliente getCliente(){
@@ -51,6 +49,6 @@ public class Asiento
     }
 
     public String toString() {
-        return "# " + numero +": "+ disponible;
+        return "# " + numero +": "+ cliente;
     }
 }

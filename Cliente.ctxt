@@ -4,5 +4,5 @@ comment0.target=Cliente(java.lang.String,\ java.lang.String)
 comment1.params=eMail
 comment1.target=void\ setEmail(java.lang.String)
 comment2.params=
-comment2.target=java.lang.String\ getDetallesCliente()
+comment2.target=java.lang.String\ toString()
 numComments=3

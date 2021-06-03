@@ -14,12 +14,17 @@ public class Fila
         asientos = new Asiento[cantidad];
     }
 
+    public boolean reservaAsientos(int[] numeros, Cliente cliente)
+    {
+        return false;
+    }
+
     public boolean reservaAsientos(int cantidad)
     {
         return false;
     }
 
-    public Asiento[] buscaAsientosPorNumero(int numero)
+    public Asiento buscaAsientoPorNumero(int numero)
     {
         return null;        
     }

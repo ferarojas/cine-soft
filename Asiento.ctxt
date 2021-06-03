@@ -1,16 +1,14 @@
 #BlueJ class context
 comment0.params=numero
 comment0.target=Asiento(int)
-comment1.params=
-comment1.target=boolean\ aceptaReserva()
+comment1.params=cliente
+comment1.target=boolean\ aceptaReserva(Cliente)
 comment2.params=
 comment2.target=boolean\ cancelaReserva()
 comment3.params=
-comment3.target=boolean\ getEstado()
-comment4.params=cliente
-comment4.target=void\ setCliente(Cliente)
+comment3.target=boolean\ estaDisponible()
+comment4.params=
+comment4.target=Cliente\ getCliente()
 comment5.params=
-comment5.target=Cliente\ getCliente()
-comment6.params=
-comment6.target=java.lang.String\ toString()
-numComments=7
+comment5.target=java.lang.String\ toString()
+numComments=6
