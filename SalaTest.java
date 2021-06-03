@@ -32,7 +32,7 @@ public class SalaTest
     public void setUp()
     {
         cliente1 = new Cliente("pedro", "123");
-        sala1 = new Sala("Zalamea", 8);
+        sala1 = new Sala("Zalamea", 8, 12);
     }
 
     /**

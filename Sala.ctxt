@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.params=nombreSala\ cantidad
-comment0.target=Sala(java.lang.String,\ int)
-comment0.text=\r\n\ @param\ nombre\ de\ la\ sala.\r\n\ @param\ cantidad\ de\ filas\ de\ esta\ sala.\r\n
+comment0.params=nombreSala\ cantidadFilas\ cantidadAsientos
+comment0.target=Sala(java.lang.String,\ int,\ int)
+comment0.text=\r\n\ @param\ nombre\ de\ la\ sala.\r\n\ @param\ cantidad\ de\ filas\ de\ esta\ sala.\r\n\ @param\ cantidad\ de\ asientos\ de\ cada\ fila.\r\n
 comment1.params=numeroDeFila\ numerosDeAsientos\ cliente
 comment1.target=boolean\ aceptaReserva(int,\ int[],\ Cliente)
 comment2.params=filaElegida
@@ -11,5 +11,5 @@ comment3.target=java.lang.String\ getDetalles()
 comment4.params=
 comment4.target=java.lang.String\ getNombreSala()
 comment5.params=
-comment5.target=Fila[]\ getFilas()
+comment5.target=java.util.ArrayList\ getFilas()
 numComments=6

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Representa una sala con filas de asientos.
@@ -7,24 +8,27 @@
  */
 public class Sala {
 
-    private Fila[] filas;
+    private ArrayList<Fila> filas;
     private String nombreSala;
 
     /**
      * @param nombre de la sala.
      * @param cantidad de filas de esta sala.
+     * @param cantidad de asientos de cada fila.
      */
-    public Sala(String nombreSala, int cantidad){
+    public Sala(String nombreSala, int cantidadFilas, int cantidadAsientos){
         this.nombreSala = nombreSala;
-        filas = new Fila[cantidad];
-        for( int i=0; i<cantidad; i++ ){
-            filas[i] = new Fila(i+1);
+        filas = new ArrayList<>();
+        for( int i=0; i<cantidadFilas; i++ ){
+            filas.add( new Fila(cantidadAsientos));
         }        
     }
 
     public boolean aceptaReserva(int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){
-        if( numeroDeFila >= 0 && numeroDeFila < filas.length )
-            return filas[numeroDeFila].reservaAsientos(numerosDeAsientos, cliente);
+        if( numeroDeFila > 0 && numeroDeFila <= filas.size() ){
+            numeroDeFila--;
+            return filas.get(numeroDeFila).reservaAsientos(numerosDeAsientos, cliente);
+        }
         else
             return false;
     }
@@ -34,14 +38,14 @@ public class Sala {
     }
 
     public String getDetalles(){
-        return nombreSala +" - # de filas: "+ filas.length;
+        return nombreSala +" - # de filas: "+ filas.size();
     }
 
     public String getNombreSala() {
         return nombreSala;
     }
 
-    public Fila[] getFilas(){
+    public ArrayList<Fila> getFilas(){
         return filas;
     }
 }

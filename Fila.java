@@ -14,7 +14,7 @@ public class Fila
      */    
     public Fila(int cantidad){
         asientos = new Asiento[cantidad];
-        for( int i=0; i<cantidad; i++ ){
+        for( int i=0; i<asientos.length; i++ ){
             asientos[i] = new Asiento(i+1);
         }
     }
