@@ -13,6 +13,9 @@ import org.junit.Test;
  */
 public class FilaTest
 {
+    private Fila fila1;
+    private Cliente cliente1;    
+
     /**
      * Default constructor for test class FilaTest
      */
@@ -28,6 +31,8 @@ public class FilaTest
     @Before
     public void setUp()
     {
+        fila1 = new Fila(12);
+        cliente1 = new Cliente("pedro", "123");
     }
 
     /**
@@ -39,4 +44,19 @@ public class FilaTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void testBuscaPorNumero()
+    {
+        assertEquals(1, fila1.buscaAsientoPorNumero(1).getNumero());
+    }
+
+    @Test
+    public void testReservaPorNumero()
+    {
+//         assertEquals(true, fila1.reservaAsientos({7,8,9}, cliente1));
+    }
 }
+
+
+

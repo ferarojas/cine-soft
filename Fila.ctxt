@@ -1,14 +1,13 @@
 #BlueJ class context
 comment0.params=cantidad
 comment0.target=Fila(int)
-comment1.params=numeros\ cliente
-comment1.target=boolean\ reservaAsientos(int[],\ Cliente)
-comment2.params=cantidad
-comment2.target=boolean\ reservaAsientos(int)
+comment1.params=cantidad
+comment1.target=Asiento[]\ buscaAsientosContiguos(int)
+comment2.params=numeros\ cliente
+comment2.target=boolean\ reservaAsientos(int[],\ Cliente)
+comment2.text=\r\n\ Reserva\ todos\ si\ estan\ disponibles;\ sino\ ninguno.\r\n\ @param\ numeros\ que\ el\ cliente\ a\ elegido.\r\n\ @param\ el\ cliente\ que\ hace\ la\ reserva.\r\n
 comment3.params=numero
 comment3.target=Asiento\ buscaAsientoPorNumero(int)
-comment4.params=cantidad
-comment4.target=Asiento[]\ buscaAsientosContiguos(int)
-comment5.params=
-comment5.target=Asiento[]\ buscaAsientosDisponibles()
-numComments=6
+comment4.params=
+comment4.target=Asiento[]\ asientosDisponibles()
+numComments=5

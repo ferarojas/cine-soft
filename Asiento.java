@@ -43,6 +43,10 @@ public class Asiento
         else
             return false;
     }
+    
+    public int getNumero(){
+        return numero;
+    }
 
     public Cliente getCliente(){
         return cliente;
