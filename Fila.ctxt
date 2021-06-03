@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=cantidad
+comment0.target=Fila(int)
+comment1.params=cantidad
+comment1.target=boolean\ reservaAsientos(int)
+comment2.params=numero
+comment2.target=Asiento[]\ buscaAsientosPorNumero(int)
+comment3.params=cantidad
+comment3.target=Asiento[]\ buscaAsientosContiguos(int)
+comment4.params=
+comment4.target=Asiento[]\ buscaAsientosDisponibles()
+numComments=5

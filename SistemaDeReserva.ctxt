@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SistemaDeReserva()
+comment1.params=titulo
+comment1.target=java.util.ArrayList\ getFunciones(java.lang.String)
+comment2.params=dia
+comment2.target=java.util.ArrayList\ getFunciones(int)
+comment3.params=funcion
+comment3.target=java.lang.String\ getDetalles(Funcion)
+comment4.params=cliente\ funcion\ cantidad
+comment4.target=boolean\ reservaAsientos(Cliente,\ Funcion,\ int)
+comment5.params=fila\ cantidad
+comment5.target=java.util.ArrayList\ encuetraAsientosContiguos(Fila,\ int)
+comment6.params=cliente
+comment6.target=java.lang.String\ getDetallesReserva(Cliente)
+comment7.params=funcion
+comment7.target=java.util.ArrayList\ listaClientesFuncion(Funcion)
+comment8.params=cliente
+comment8.target=boolean\ cancela(Cliente)
+comment9.params=args
+comment9.target=void\ main(java.lang.String[])
+numComments=10

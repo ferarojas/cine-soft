@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=sala\ pelicula\ dia\ hora
+comment0.target=Funcion(Sala,\ java.lang.String,\ int,\ java.lang.String)
+comment1.params=cliente\ cantidad
+comment1.target=boolean\ reservaAsientos(Cliente,\ int)
+comment10.params=
+comment10.target=java.lang.String\ getpelicula()
+comment11.params=pelicula
+comment11.target=void\ setpelicula(java.lang.String)
+comment2.params=sala
+comment2.target=void\ setSala(Sala)
+comment3.params=
+comment3.target=Sala\ getSala()
+comment4.params=
+comment4.target=java.lang.String\ getDetalles()
+comment5.params=
+comment5.target=java.util.ArrayList\ getClientes()
+comment6.params=
+comment6.target=int\ getDia()
+comment7.params=dia
+comment7.target=void\ setDia(int)
+comment8.params=
+comment8.target=java.lang.String\ gethora()
+comment9.params=hora
+comment9.target=void\ sethora(java.lang.String)
+numComments=12
