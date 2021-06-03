@@ -9,6 +9,9 @@ public class Fila
 {
     private Asiento[] asientos;
 
+    /**
+     * @param cantidad de asientos de esta fila.
+     */    
     public Fila(int cantidad){
         asientos = new Asiento[cantidad];
         for( int i=0; i<cantidad; i++ ){

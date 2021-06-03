@@ -54,7 +54,8 @@ public class FilaTest
     @Test
     public void testReservaPorNumero()
     {
-//         assertEquals(true, fila1.reservaAsientos({7,8,9}, cliente1));
+        int[] numerosDeAsientos = {1,2,3,4};
+        assertEquals(true, fila1.reservaAsientos(numerosDeAsientos, cliente1));
     }
 }
 
