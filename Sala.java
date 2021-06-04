@@ -14,14 +14,23 @@ public class Sala {
     /**
      * @param nombre de la sala.
      * @param cantidad de filas de esta sala.
-     * @param cantidad de asientos de cada fila.
+     * @param cantidad de asientos de las filas.
      */
     public Sala(String nombreSala, int cantidadFilas, int cantidadAsientos){
         this.nombreSala = nombreSala;
         filas = new ArrayList<>();
         for( int i=0; i<cantidadFilas; i++ ){
-            filas.add( new Fila(cantidadAsientos));
+            filas.add( new Fila(cantidadAsientos) );
         }        
+    }
+    
+    /**
+     * Cuando se desee agregar fila por fila para construir salas que tengan
+     * filas con diferentes cantidades de asientos.
+     * @param cantidad de asientos de la fila a agregar.
+     */
+    public void agregaFila(int cantidadAsientos){
+        filas.add( new Fila(cantidadAsientos) );
     }
 
     public boolean aceptaReserva(int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){

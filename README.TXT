@@ -2,10 +2,10 @@ Project: Cine-Soft
 Authors: FRoM
 
 POR HACER:
-
+Implementar metodos de prueba de la clase Funcion.
 
 ESTA VERSION 
-
+Se implementaron metodos de prueba de la clase Sala.
 
 DESCRIPCIÓN DE LA APLICACIÓN 
 El sistema de reserva de entradas para el cine debe almacenar reservas 
