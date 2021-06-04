@@ -11,14 +11,14 @@ public class Funcion
 {
     private Sala sala; 
     private String pelicula;
-    private int dia;
+    private Fecha fecha;
     private String hora;
     private ArrayList<Cliente> clientes;
 
-    public Funcion(Sala sala, String pelicula, int dia, String hora) {
+    public Funcion(Sala sala, String pelicula, Fecha fecha) {
         this.sala = sala;
         this.pelicula = pelicula;
-        this.dia = dia;
+        this.fecha = fecha;
         this.hora = hora;
         clientes = new ArrayList<>();
     }
@@ -45,34 +45,34 @@ public class Funcion
 
     public String getDetalles()
     {
-        return pelicula +"\n"+ sala +" - "+ dia +" - "+ hora;
+        return pelicula +"\nSala: "+ sala.getNombreSala() +" - "+ getFecha() +" - "+ gethora();
     }
 
     public ArrayList<Cliente> getClientes(){
         return clientes;
     }
 
-    public int getDia() {
-        return dia;
+    public String getFecha() {        
+        return fecha.getLaFecha();
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
+    public void setFecha(Fecha fecha) {
+        this.fecha = fecha;
     }
 
     public String gethora() {
-        return hora;
+        return fecha.getLaHora();
     }
 
     public void sethora(String hora) {
         this.hora = hora;
     }
 
-    public String getpelicula() {
+    public String getPelicula() {
         return pelicula;
     }
 
-    public void setpelicula(String pelicula) {
+    public void setPelicula(String pelicula) {
         this.pelicula = pelicula;
     }
 }

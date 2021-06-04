@@ -32,7 +32,7 @@ public class FuncionTest
     public void setUp()
     {
         sala1 = new Sala("Zalamea", 8, 12);
-        funcion1 = new Funcion(sala1, "behind", 5, "8.30 pm");
+        funcion1 = new Funcion(sala1, "behind", new Fecha());
     }
 
     /**
