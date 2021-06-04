@@ -46,7 +46,7 @@ public class SalaTest
     @Test
     public void testAceptaReserva()
     {
-        int[] numerosDeAsientos = {1,2,3,4};
+        int[] numerosDeAsientos = {1,3,5};
         assertEquals(true, sala1.aceptaReserva(3, numerosDeAsientos));
     }
 }

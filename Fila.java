@@ -44,6 +44,26 @@ public class Fila
         return null;
     }
 
+    public Asiento[] asientosReservados(){
+        Asiento[] detectados = new Asiento[asientos.length];
+        int index = 0;
+        for( Asiento asiento : asientos ){
+            if( ! asiento.estaDisponible() ){
+                detectados[index] = asiento;
+                index++;
+            }
+        }
+        Asiento[] reservados = new Asiento[index];
+        index = 0;
+        for( Asiento asiento : detectados ){
+            if( asiento != null ){
+                reservados[index] = asiento;
+                index++;            
+            }
+        }
+        return reservados;
+    }
+
     public Asiento[] asientosDisponibles(){
         Asiento[] detectados = new Asiento[asientos.length];
         int index = 0;
@@ -53,13 +73,21 @@ public class Fila
                 index++;
             }
         }
-        Asiento[] disponibles = new Asiento[detectados.length];
+        if( detectados.length == 0 )
+            return null;
+        Asiento[] disponibles = new Asiento[index];
         index = 0;
         for( Asiento asiento : detectados ){
+            if( asiento != null ){
                 disponibles[index] = asiento;
                 index++;            
+            }            
         }
         return disponibles;
+    }
+    
+    public Asiento[] getAsientos(){
+        return asientos;
     }
 
     public Asiento[] buscaAsientosContiguos(int cantidad){

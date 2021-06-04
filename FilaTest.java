@@ -55,7 +55,37 @@ public class FilaTest
         int[] numerosDeAsientos = {1,2,3,4};
         assertEquals(true, fila1.reservaAsientos(numerosDeAsientos));
     }
+
+    @Test
+    public void testAsientosDisponibles1()
+    {
+        int cantidad = fila1.getAsientos().length;
+        assertEquals(cantidad, fila1.asientosDisponibles().length);
+    }
+
+    @Test
+    public void testAsientosDisponibles2()
+    {
+        int[] numerosDeAsientos = {1,3,5};
+        int cantidad = fila1.getAsientos().length - 3;
+        assertEquals(true, fila1.reservaAsientos(numerosDeAsientos));
+        assertEquals(cantidad, fila1.asientosDisponibles().length);
+    }
+
+    @Test
+    public void testAsientosReservados1()
+    {
+        int cantidad = 0;
+        assertEquals(cantidad, fila1.asientosReservados().length);
+    }
+
+    @Test
+    public void testAsientosReservados2()
+    {
+        int[] numerosDeAsientos = {1,3,5};
+        int cantidad = numerosDeAsientos.length;
+        assertEquals(true, fila1.reservaAsientos(numerosDeAsientos));
+        assertEquals(cantidad, fila1.asientosReservados().length);
+    }
 }
-
-
 

@@ -48,7 +48,7 @@ public class FuncionTest
     @Test
     public void testReservaAsientos()
     {
-        int[] numerosDeAsientos = {1,2,3,4};
+        int[] numerosDeAsientos = {1,3,5};
         assertEquals(true, sala1.aceptaReserva(3, numerosDeAsientos));
     }
 }

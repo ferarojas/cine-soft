@@ -24,7 +24,15 @@ public class Funcion
     }
 
     public boolean reservaAsientos(int numeroDeFila, int[] numerosDeAsientos){
-        return sala.aceptaReserva(numeroDeFila, numerosDeAsientos);
+        boolean seReservo = sala.aceptaReserva(numeroDeFila, numerosDeAsientos);
+        if( seReservo == true ){
+            Asiento[] reservados = sala.getFilas().get(numeroDeFila-1).asientosReservados();
+            if( reservados.length > 0 ){
+                for( Asiento asiento : reservados )
+                    clientes.add(asiento.getCliente());
+            }
+        }
+        return seReservo;
     }
 
     public void setSala(Sala sala) {
