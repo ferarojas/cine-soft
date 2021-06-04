@@ -20,6 +20,10 @@ public class Cliente {
        this.eMail = eMail;
     }
     
+    public String getNombre(){
+        return nombre;
+    }
+    
     public String toString()
     {
         return nombre +" - "+ telefono +" - "+ eMail;

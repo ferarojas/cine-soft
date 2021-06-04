@@ -7,8 +7,8 @@ import java.util.ArrayList;
  * @author  FRoM
  * @version 2018
  */
-public class Funcion {
-
+public class Funcion 
+{
     private Sala sala; 
     private String pelicula;
     private int dia;
@@ -23,8 +23,8 @@ public class Funcion {
         clientes = new ArrayList<>();
     }
 
-    public boolean reservaAsientos(Cliente cliente, int cantidad){
-        return false;
+    public boolean reservaAsientos(int numeroDeFila, int[] numerosDeAsientos){
+        return sala.aceptaReserva(numeroDeFila, numerosDeAsientos);
     }
 
     public void setSala(Sala sala) {

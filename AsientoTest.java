@@ -15,7 +15,6 @@ public class AsientoTest
 {
     private Asiento asiento1;
     private Asiento asiento2;
-    private Cliente cliente1;
     private Cliente cliente2;
 
     /**
@@ -35,8 +34,6 @@ public class AsientoTest
     {
         asiento1 = new Asiento(1);
         asiento2 = new Asiento(2);
-        cliente1 = new Cliente("pedro", "123");
-        cliente2 = new Cliente("pablo", "456");
     }
 
     /**
@@ -52,20 +49,20 @@ public class AsientoTest
     @Test
     public void testAceptaReserva()
     {
-        assertEquals(true, asiento1.aceptaReserva(cliente1));
+        assertEquals(true, asiento1.aceptaReserva());
     }
 
     @Test
     public void testNoAceptaReserva()
     {
-        assertEquals(true, asiento1.aceptaReserva(cliente1));
-        assertEquals(false, asiento1.aceptaReserva(cliente2));
+        assertEquals(true, asiento1.aceptaReserva());
+        assertEquals(false, asiento1.aceptaReserva());
     }
 
     @Test
     public void testCancelaReserva()
     {
-        assertEquals(true, asiento1.aceptaReserva(cliente1));
+        assertEquals(true, asiento1.aceptaReserva());
         assertEquals(true, asiento1.cancelaReserva());
     }
 
@@ -78,7 +75,7 @@ public class AsientoTest
     @Test
     public void testNoCancelaReservaDeNuevo()
     {
-        assertEquals(true, asiento1.aceptaReserva(cliente1));
+        assertEquals(true, asiento1.aceptaReserva());
         assertEquals(true, asiento1.cancelaReserva());
         assertEquals(false, asiento1.cancelaReserva());
     }
@@ -92,7 +89,7 @@ public class AsientoTest
     @Test
     public void testNoEstaDisponible()
     {
-        assertEquals(true, asiento1.aceptaReserva(cliente1));
+        assertEquals(true, asiento1.aceptaReserva());
         assertEquals(false, asiento1.estaDisponible());
     }
 
@@ -100,13 +97,6 @@ public class AsientoTest
     public void testNoHayCliente()
     {
         assertEquals(null, asiento1.getCliente());
-    }
-
-    @Test
-    public void testGetCliente()
-    {
-        assertEquals(true, asiento1.aceptaReserva(cliente1));
-        assertEquals(cliente1, asiento1.getCliente());
     }
 }
 

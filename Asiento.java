@@ -12,15 +12,15 @@ public class Asiento
     private int numero;
     private Cliente cliente;
 
-    public Asiento(int numero) {
+    public Asiento(int numero){
         this.numero = numero;
         cliente = null;
     }
 
-    public boolean aceptaReserva(Cliente cliente)
-    {
+    public boolean aceptaReserva(){
+        Cliente clienteReserva = Util.getCliente();
         if( this.cliente == null ){
-            this.cliente = cliente;
+            this.cliente = clienteReserva;
             return true;
         }
         else

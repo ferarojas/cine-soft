@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 /**
  * Representa una sala con filas de asientos.
+ * Las filas pueden tener cantidades diferentes de asientos.
  * 
  * @author  FRoM
  * @version 2018
@@ -33,10 +34,10 @@ public class Sala {
         filas.add( new Fila(cantidadAsientos) );
     }
 
-    public boolean aceptaReserva(int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){
+    public boolean aceptaReserva(int numeroDeFila, int[] numerosDeAsientos){
         if( numeroDeFila > 0 && numeroDeFila <= filas.size() ){
             numeroDeFila--;
-            return filas.get(numeroDeFila).reservaAsientos(numerosDeAsientos, cliente);
+            return filas.get(numeroDeFila).reservaAsientos(numerosDeAsientos);
         }
         else
             return false;

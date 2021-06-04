@@ -19,20 +19,16 @@ public class Fila
         }
     }
 
-    public Asiento[] buscaAsientosContiguos(int cantidad){
-        return null;
-    }
-
     /**
      * Reserva todos si estan disponibles; sino ninguno.
      * @param numeros que el cliente a elegido.
      * @param el cliente que hace la reserva.
      */
-    public boolean reservaAsientos(int[] numeros, Cliente cliente){
+    public boolean reservaAsientos(int[] numeros){
         boolean posible = true;
         for( int numero : numeros ){
             if( asientos[numero-1].estaDisponible() && posible )
-                asientos[numero-1].aceptaReserva(cliente);
+                asientos[numero-1].aceptaReserva();
             else
                 posible = false;
         }
@@ -64,5 +60,9 @@ public class Fila
                 index++;            
         }
         return disponibles;
+    }
+
+    public Asiento[] buscaAsientosContiguos(int cantidad){
+        return null;
     }
 }
