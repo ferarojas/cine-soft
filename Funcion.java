@@ -53,7 +53,7 @@ public class Funcion
     }
 
     public String getFecha() {        
-        return fecha.getLaFecha();
+        return fecha.getStringFecha();
     }
 
     public void setFecha(Fecha fecha) {
@@ -61,10 +61,10 @@ public class Funcion
     }
 
     public String gethora() {
-        return fecha.getLaHora();
+        return fecha.getStringHora();
     }
 
-    public void sethora(String hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

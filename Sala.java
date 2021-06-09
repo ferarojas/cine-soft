@@ -13,6 +13,11 @@ public class Sala {
     private String nombreSala;
 
     /**
+     * Crea una sala con cierta cantidad de filas; todas con la misma cantidad
+     * de asientos. Si esto no es lo requerido, cree una sala con una primera
+     * fila y utilice el metodo agregaFila, para agregar mas filas con diferente
+     * cantidad de asientos para cada fila.
+     * 
      * @param nombre de la sala.
      * @param cantidad de filas de esta sala.
      * @param cantidad de asientos de las filas.

@@ -37,11 +37,11 @@ public class Fecha
             calendario = new GregorianCalendar();
     }
     
-    public String getLaFecha(){
+    public String getStringFecha(){
         return getStrDia() +", "+ getDiaDelMes() +" de "+ getStrMes() +" de "+ getAgnio();
     }
     
-    public String getLaHora(){
+    public String getStringHora(){
         return getHora() +":"+ getMinuto() +" "+ getAM_PM();
     }
 

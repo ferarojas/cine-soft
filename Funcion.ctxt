@@ -22,5 +22,5 @@ comment7.target=void\ setFecha(Fecha)
 comment8.params=
 comment8.target=java.lang.String\ gethora()
 comment9.params=hora
-comment9.target=void\ sethora(java.lang.String)
+comment9.target=void\ setHora(java.lang.String)
 numComments=12

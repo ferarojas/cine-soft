@@ -16,14 +16,47 @@ public class SistemaDeReserva
         funciones = new ArrayList<>();
     }
 
-    boolean reservaAsientos(Funcion funcion, int cantidad)
-    {
-        return false;
+    public boolean reservaAsientos(Funcion funcion, int numeroDeFila, int[] numerosDeAsientos){
+
+        return funcion.reservaAsientos(numeroDeFila, numerosDeAsientos);
     }
 
-    public boolean cancela(Cliente cliente)
+    public boolean cancelaReserva(Funcion funcion, Cliente cliente)
     {
+        ArrayList<Cliente> clientes = listaClientesFuncion(funcion);
+        for( Cliente clnt : clientes ){
+            if( clnt.getNombre().equals( cliente.getNombre() ) ){
+                Asiento[] asientos = funcion.getSala().getFilas().get(FILA_PRUEBA).asientosReservados();
+                if( asientos.length != 0 ){
+                    for( Asiento asiento : asientos ){
+                        if( asiento.getCliente().getNombre().equals( cliente.getNombre() ) )
+                            asiento.cancelaReserva();
+                    }
+                }                
+            }
+        }
         return false;        
+    }
+
+    /**
+     * Obtiene informacion de reserva para un cliente y funcion de prueba.
+     */
+    public String getDetallesReserva(Funcion funcion)
+    {
+        String detalles = "";
+        ArrayList<Cliente> clientesFuncion = funcion.getClientes();
+        if( clientesFuncion.size() == 0 )
+            return "Esta funcion no tiene reservas.";
+        Cliente cliente = clientesFuncion.get(INDEX_PRUEBA);           
+        Asiento[] asientos = funcion.getSala().getFilas().get(FILA_PRUEBA).asientosReservados();
+        if( asientos.length != 0 ){
+            detalles = "Su reserva: Fila "+ (FILA_PRUEBA+1) +" - Asientos: ";
+            for( Asiento asiento : asientos ){
+                if( asiento.getCliente().getNombre().equals( cliente.getNombre() ) )
+                    detalles += asiento.getNumero() +"  ";
+            }
+        }
+        return detalles;
     }
 
     public ArrayList<Funcion> getFunciones(String titulo)
@@ -38,34 +71,14 @@ public class SistemaDeReserva
 
     public String getDetalles(Funcion funcion)
     {
-        return "";
-    }
-
-    public String getDetallesReserva(Funcion funcion)
-    {
-        String detalles = "";
-        ArrayList<Cliente> clientesFuncion = funcion.getClientes();
-        if( clientesFuncion.size() == 0 )
-            return "No hay clientes en esa funcion.";
-        Cliente cliente = clientesFuncion.get(INDEX_PRUEBA);           
-        Asiento[] asientos = funcion.getSala().getFilas().get(FILA_PRUEBA).asientosReservados();
-        if( asientos.length != 0 ){
-            detalles = "Su reserva: Fila "+ (FILA_PRUEBA+1) +" - Asientos: ";
-            for( Asiento asiento : asientos ){
-                if( asiento.getCliente().getNombre().equals( cliente.getNombre() ) )
-                    detalles += asiento.getNumero() +"  ";
-            }
-        }
-        else
-            detalles += "Esta funcion no tiene reservas.";
-        return detalles;
+        return funcion.getDetalles();
     }
 
     public void agregaFuncion(Funcion funcion){
         funciones.add(funcion);
     }
 
-    public ArrayList<Cliente> listaClientesFuncion(Funcion funcion)
+    private ArrayList<Cliente> listaClientesFuncion(Funcion funcion)
     {
         return funcion.getClientes();
     }

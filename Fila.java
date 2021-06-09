@@ -14,7 +14,7 @@ public class Fila
      */    
     public Fila(int cantidad){
         asientos = new Asiento[cantidad];
-        for( int i=0; i<asientos.length; i++ ){
+        for( int i = 0; i < asientos.length; i++ ){
             asientos[i] = new Asiento(i+1);
         }
     }
@@ -52,7 +52,7 @@ public class Fila
                 detectados[index] = asiento;
                 index++;
             }
-        }
+        }       
         Asiento[] reservados = new Asiento[index];
         index = 0;
         for( Asiento asiento : detectados ){
@@ -64,27 +64,25 @@ public class Fila
         return reservados;
     }
 
-    public Asiento[] asientosDisponibles(){
-        Asiento[] detectados = new Asiento[asientos.length];
-        int index = 0;
-        for( Asiento asiento : asientos ){
-            if( asiento.estaDisponible() ){
-                detectados[index] = asiento;
-                index++;
-            }
-        }
-        if( detectados.length == 0 )
-            return null;
-        Asiento[] disponibles = new Asiento[index];
-        index = 0;
-        for( Asiento asiento : detectados ){
-            if( asiento != null ){
-                disponibles[index] = asiento;
-                index++;            
-            }            
-        }
-        return disponibles;
-    }
+//     public Asiento[] asientosDisponibles(){
+//         Asiento[] detectados = new Asiento[asientos.length];
+//         int index = 0;
+//         for( Asiento asiento : asientos ){
+//             if( asiento.estaDisponible() ){
+//                 detectados[index] = asiento;
+//                 index++;
+//             }
+//         }
+//         Asiento[] disponibles = new Asiento[index];
+//         index = 0;
+//         for( Asiento asiento : detectados ){
+//             if( asiento != null ){
+//                 disponibles[index] = asiento;
+//                 index++;            
+//             }            
+//         }
+//         return disponibles;
+//     }
     
     public Asiento[] getAsientos(){
         return asientos;
