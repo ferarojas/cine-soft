@@ -13,14 +13,9 @@ import org.junit.Test;
  */
 public class SistemaDeReservaTest
 {
-    private Asiento asiento1;
-    private Asiento asiento2;
-    private Cliente cliente2;
-    private Fila fila1;
+    private SistemaDeReserva sistemaD1;
     private Sala sala1;
     private Funcion funcion1;
-    private Cliente cliente1;
-    private SistemaDeReserva sistemaD1;
 
     /**
      * Default constructor for test class SistemaDeReservaTest
@@ -37,16 +32,10 @@ public class SistemaDeReservaTest
     @Before
     public void setUp()
     {
-        asiento1 = new Asiento(1);
-        asiento2 = new Asiento(2);
-        fila1 = new Fila(12);
-        sala1 = new Sala("Zalamea", 8, 12);
+        sistemaD1 = new SistemaDeReserva();
         sala1 = new Sala("Zalamea", 8, 12);
         funcion1 = new Funcion(sala1, "behind", new Fecha());
-        cliente1 = new Cliente("pedro", "123");
-        cliente2 = new Cliente("pablo", "456");
-        
-        sistemaD1 = new SistemaDeReserva();
+        sistemaD1.agregaFuncion(funcion1);
     }
 
     /**
@@ -58,4 +47,12 @@ public class SistemaDeReservaTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void testReservaAsientos()
+    {
+        int[] numerosDeAsientos = {1,3,5};        
+        assertEquals(true, sistemaD1.reservaAsientos(funcion1, 1, numerosDeAsientos));
+    }
 }
+

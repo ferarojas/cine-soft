@@ -45,14 +45,14 @@ public class Funcion
 
     public String getDetalles()
     {
-        return pelicula +"\nSala: "+ sala.getNombreSala() +" - "+ getFecha() +" - "+ gethora();
+        return pelicula +"\nSala: "+ sala.getNombreSala() +" - "+ getStringFecha() +" - "+ gethora();
     }
 
     public ArrayList<Cliente> getClientes(){
         return clientes;
     }
 
-    public String getFecha() {        
+    public String getStringFecha() {        
         return fecha.getStringFecha();
     }
 

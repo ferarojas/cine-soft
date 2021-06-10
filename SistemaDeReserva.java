@@ -59,14 +59,26 @@ public class SistemaDeReserva
         return detalles;
     }
 
-    public ArrayList<Funcion> getFunciones(String titulo)
+    public ArrayList<Funcion> getFuncionesXtitulo(String titulo)
     {
-        return null;
+        ArrayList<Funcion> funcionesXtitulo = new ArrayList<>();
+        for( Funcion fncn : funciones ){
+            if( fncn.getPelicula().equals(titulo) ){
+                funcionesXtitulo.add( fncn );
+            }            
+        }
+        return funcionesXtitulo;
     }
 
-    public ArrayList<Funcion> getFunciones(int dia)
+    public ArrayList<Funcion> getFuncionesXfecha(String fecha)
     {
-        return null;
+        ArrayList<Funcion> funcionesXfecha = new ArrayList<>();
+        for( Funcion fncn : funciones ){
+            if( fncn.getStringFecha().equals(fecha) ){
+                funcionesXfecha.add( fncn );
+            }            
+        }
+        return funcionesXfecha;
     }
 
     public String getDetalles(Funcion funcion)
@@ -83,7 +95,7 @@ public class SistemaDeReserva
         return funcion.getClientes();
     }
 
-    public ArrayList<Asiento> encuetraAsientosContiguos(Fila fila, int cantidad)
+    public ArrayList<Asiento> encuetraAsientosContiguos(int fila, int cantidad)
     {
         return null;
     }
