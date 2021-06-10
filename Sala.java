@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Las filas pueden tener cantidades diferentes de asientos.
  * 
  * @author  FRoM
- * @version 2018
+ * @version 2021
  */
 public class Sala {
 

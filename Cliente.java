@@ -2,7 +2,7 @@
  * Representa a quien reserva asientos en una funcion.
  * 
  * @author  FRoM
- * @version 2018
+ * @version 2021
  */
 public class Cliente {
 

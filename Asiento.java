@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * un cliente en una funcion especifica.
  * 
  * @author  FRoM
- * @version 2018
+ * @version 2021
  */
 public class Asiento 
 {
@@ -18,13 +18,16 @@ public class Asiento
     }
 
     public boolean aceptaReserva(){
-        Cliente clienteReserva = Util.getCliente();
         if( this.cliente == null ){
-            this.cliente = clienteReserva;
+            this.cliente = getCliente();
             return true;
         }
         else
             return false;
+    }
+    
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
     }
 
     public boolean cancelaReserva()

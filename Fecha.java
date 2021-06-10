@@ -1,6 +1,5 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Date;
 /**
  * Fecha 
  * 
@@ -29,18 +28,22 @@ public class Fecha
             "Septiembre", "Octubre", "Noviembre", "Diciembre" };
 
     private String dias[] = { "", "Domingo", "Lunes", "Martes", "Miércoles", 
-                                "Jueves", "Viernes", "Sábado" };
+            "Jueves", "Viernes", "Sábado" };
 
-    public Fecha()
-    {
+    public Fecha(){
         if( calendario == null )
             calendario = new GregorianCalendar();
     }
-    
+
+    public Fecha(int agnio, int mes, int dia, int hora, int minuto){
+        calendario = new GregorianCalendar();
+        calendario.set(agnio, mes-1, dia, hora, minuto);
+    }
+
     public String getStringFecha(){
         return getStrDia() +", "+ getDiaDelMes() +" de "+ getStrMes() +" de "+ getAgnio();
     }
-    
+
     public String getStringHora(){
         return getHora() +":"+ getMinuto() +" "+ getAM_PM();
     }
@@ -137,7 +140,7 @@ public class Fecha
             strAM_PM = "AM";
         else
             strAM_PM = "PM";
-            
+
         return strAM_PM;
     }
 

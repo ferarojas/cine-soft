@@ -3,7 +3,7 @@
  * Representa un arreglo lineal de asientos.
  * 
  * @author  FRoM
- * @version 2018
+ * @version 2021
  */
 public class Fila
 {
@@ -64,25 +64,25 @@ public class Fila
         return reservados;
     }
 
-//     public Asiento[] asientosDisponibles(){
-//         Asiento[] detectados = new Asiento[asientos.length];
-//         int index = 0;
-//         for( Asiento asiento : asientos ){
-//             if( asiento.estaDisponible() ){
-//                 detectados[index] = asiento;
-//                 index++;
-//             }
-//         }
-//         Asiento[] disponibles = new Asiento[index];
-//         index = 0;
-//         for( Asiento asiento : detectados ){
-//             if( asiento != null ){
-//                 disponibles[index] = asiento;
-//                 index++;            
-//             }            
-//         }
-//         return disponibles;
-//     }
+    public Asiento[] asientosDisponibles(){
+        Asiento[] detectados = new Asiento[asientos.length];
+        int index = 0;
+        for( Asiento asiento : asientos ){
+            if( asiento.estaDisponible() ){
+                detectados[index] = asiento;
+                index++;
+            }
+        }
+        Asiento[] disponibles = new Asiento[index];
+        index = 0;
+        for( Asiento asiento : detectados ){
+            if( asiento != null ){
+                disponibles[index] = asiento;
+                index++;            
+            }            
+        }
+        return disponibles;
+    }
     
     public Asiento[] getAsientos(){
         return asientos;

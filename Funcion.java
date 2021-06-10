@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Mantiene una coleccion de los clientes que han reservado asientos.
  * 
  * @author  FRoM
- * @version 2018
+ * @version 2021
  */
 public class Funcion 
 {

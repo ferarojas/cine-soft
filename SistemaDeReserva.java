@@ -3,7 +3,7 @@ import java.util.ArrayList;
  * Maneja el Sistema de Reservas.
  * 
  * @author  FRoM
- * @version 2018
+ * @version 2021
  */
 public class SistemaDeReserva
 {
@@ -70,8 +70,7 @@ public class SistemaDeReserva
         return funcionesXtitulo;
     }
 
-    public ArrayList<Funcion> getFuncionesXfecha(String fecha)
-    {
+    public ArrayList<Funcion> getFuncionesXfecha(String fecha){
         ArrayList<Funcion> funcionesXfecha = new ArrayList<>();
         for( Funcion fncn : funciones ){
             if( fncn.getStringFecha().equals(fecha) ){
@@ -79,6 +78,11 @@ public class SistemaDeReserva
             }            
         }
         return funcionesXfecha;
+    }
+    
+    public ArrayList<Funcion> getFunciones(){
+        
+        return funciones;
     }
 
     public String getDetalles(Funcion funcion)
