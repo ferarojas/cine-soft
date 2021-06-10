@@ -50,12 +50,16 @@ public class Demo
             index++;
         }
     }
-
-    private void reservaAsientos(){
+    
+    private Funcion getFuncion(){
         System.out.print("Funcion? ");
         int indexFuncion = lector.nextInt();
         indexFuncion--;
-        Funcion funcion = funciones.get(indexFuncion);
+        return funciones.get(indexFuncion);
+    }
+
+    private void reservaAsientos(){
+        Funcion funcion = getFuncion();
         Sala sala = funcion.getSala();
         ArrayList<Fila> filas = sala.getFilas();
         int indexFila = 1;
@@ -81,13 +85,12 @@ public class Demo
             nAsiento[i] = lector.nextInt();
         }
         Cliente cliente = getCliente();
-        sistemaD1.reservaAsientos(funciones.get(indexFuncion), numeroDeFila, nAsiento, cliente);
-        
+        sistemaD1.reservaAsientos(funcion, numeroDeFila, nAsiento, cliente);        
     }
     
     public Cliente getCliente(){
         System.out.print("Su nombre? ");
-        String nombre = lector.nextLine();
+        String nombre = lector.next();
         System.out.print("Su telefono? ");
         String telefono = lector.next();
         Cliente cliente = new Cliente(nombre, telefono);
@@ -95,7 +98,9 @@ public class Demo
     }
 
     private void consultaReserva(){
-        ;            
+        System.out.print("Su nombre? ");
+        String nombre = lector.next();
+        System.out.println(sistemaD1.getDetallesReserva(getFuncion(), nombre));
     }
 
     private void cancelaReserva(){

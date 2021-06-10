@@ -41,18 +41,18 @@ public class SistemaDeReserva
     /**
      * Obtiene informacion de reserva para un cliente y funcion de prueba.
      */
-    public String getDetallesReserva(Funcion funcion)
+    public String getDetallesReserva(Funcion funcion, String nombre)
     {
         String detalles = "";
         ArrayList<Cliente> clientesFuncion = funcion.getClientes();
         if( clientesFuncion.size() == 0 )
             return "Esta funcion no tiene reservas.";
-        Cliente cliente = clientesFuncion.get(INDEX_PRUEBA);           
+//         Cliente cliente = clientesFuncion.get(INDEX_PRUEBA);           
         Asiento[] asientos = funcion.getSala().getFilas().get(FILA_PRUEBA).asientosReservados();
         if( asientos.length != 0 ){
             detalles = "Su reserva: Fila "+ (FILA_PRUEBA+1) +" - Asientos: ";
             for( Asiento asiento : asientos ){
-                if( asiento.getCliente().getNombre().equals( cliente.getNombre() ) )
+                if( asiento.getCliente().getNombre().equals( nombre ) )
                     detalles += asiento.getNumero() +"  ";
             }
         }
