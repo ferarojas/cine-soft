@@ -15,6 +15,7 @@ public class FuncionTest
 {
     private Sala sala1;
     private Funcion funcion1;
+    private Cliente cliente1;
 
     /**
      * Default constructor for test class FuncionTest
@@ -33,6 +34,7 @@ public class FuncionTest
     {
         sala1 = new Sala("Zalamea", 8, 12);
         funcion1 = new Funcion(sala1, "left behind", new Fecha());
+        cliente1 = new Cliente("pedro", "123");  
     }
 
     /**
@@ -49,7 +51,7 @@ public class FuncionTest
     public void testReservaAsientos()
     {
         int[] numerosDeAsientos = {1,3,5};
-        assertEquals(true, sala1.aceptaReserva(3, numerosDeAsientos));
+        assertEquals(true, sala1.aceptaReserva(3, numerosDeAsientos, cliente1));
     }
 }
 

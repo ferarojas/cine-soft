@@ -81,7 +81,7 @@ public class Demo
             nAsiento[i] = lector.nextInt();
         }
         Cliente cliente = getCliente();
-        sistemaD1.reservaAsientos(funciones.get(indexFuncion), numeroDeFila, nAsiento);
+        sistemaD1.reservaAsientos(funciones.get(indexFuncion), numeroDeFila, nAsiento, cliente);
         
     }
     

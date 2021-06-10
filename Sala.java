@@ -39,10 +39,10 @@ public class Sala {
         filas.add( new Fila(cantidadAsientos) );
     }
 
-    public boolean aceptaReserva(int numeroDeFila, int[] numerosDeAsientos){
+    public boolean aceptaReserva(int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){
         if( numeroDeFila > 0 && numeroDeFila <= filas.size() ){
             numeroDeFila--;
-            return filas.get(numeroDeFila).reservaAsientos(numerosDeAsientos);
+            return filas.get(numeroDeFila).reservaAsientos(numerosDeAsientos, cliente);
         }
         else
             return false;

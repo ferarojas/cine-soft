@@ -15,7 +15,7 @@ public class AsientoTest
 {
     private Asiento asiento1;
     private Asiento asiento2;
-    private Cliente cliente2;
+    private Cliente cliente1;
 
     /**
      * Default constructor for test class AsientoTest
@@ -34,6 +34,7 @@ public class AsientoTest
     {
         asiento1 = new Asiento(1);
         asiento2 = new Asiento(2);
+        cliente1 = new Cliente("pedro", "123");        
     }
 
     /**
@@ -50,12 +51,14 @@ public class AsientoTest
     public void testAceptaReserva()
     {
         assertEquals(true, asiento1.aceptaReserva());
+        asiento1.setCliente(cliente1);        
     }
 
     @Test
     public void testNoAceptaReserva()
     {
         assertEquals(true, asiento1.aceptaReserva());
+        asiento1.setCliente(cliente1);        
         assertEquals(false, asiento1.aceptaReserva());
     }
 
@@ -63,20 +66,13 @@ public class AsientoTest
     public void testCancelaReserva()
     {
         assertEquals(true, asiento1.aceptaReserva());
+        asiento1.setCliente(cliente1);        
         assertEquals(true, asiento1.cancelaReserva());
     }
 
     @Test
     public void testNoCancelaReserva()
     {
-        assertEquals(false, asiento1.cancelaReserva());
-    }
-
-    @Test
-    public void testNoCancelaReservaDeNuevo()
-    {
-        assertEquals(true, asiento1.aceptaReserva());
-        assertEquals(true, asiento1.cancelaReserva());
         assertEquals(false, asiento1.cancelaReserva());
     }
 
@@ -90,6 +86,7 @@ public class AsientoTest
     public void testNoEstaDisponible()
     {
         assertEquals(true, asiento1.aceptaReserva());
+        asiento1.setCliente(cliente1);
         assertEquals(false, asiento1.estaDisponible());
     }
 

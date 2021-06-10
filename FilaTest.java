@@ -14,7 +14,8 @@ import org.junit.Test;
 public class FilaTest
 {
     private Fila fila1;
-
+    private Cliente cliente1;
+    
     /**
      * Default constructor for test class FilaTest
      */
@@ -31,6 +32,7 @@ public class FilaTest
     public void setUp()
     {
         fila1 = new Fila(12);
+        cliente1 = new Cliente("pedro", "123");   
     }
 
     /**
@@ -53,7 +55,7 @@ public class FilaTest
     public void testReservaPorNumero()
     {
         int[] numerosDeAsientos = {1,2,3,4};
-        assertEquals(true, fila1.reservaAsientos(numerosDeAsientos));
+        assertEquals(true, fila1.reservaAsientos(numerosDeAsientos, cliente1));
     }
 
     @Test
@@ -84,7 +86,7 @@ public class FilaTest
     {
         int[] numerosDeAsientos = {1,3,5};
         int cantidad = numerosDeAsientos.length;
-        assertEquals(true, fila1.reservaAsientos(numerosDeAsientos));
+        assertEquals(true, fila1.reservaAsientos(numerosDeAsientos, cliente1));
         assertEquals(cantidad, fila1.asientosReservados().length);
     }
 }

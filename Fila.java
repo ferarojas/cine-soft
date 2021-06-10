@@ -24,11 +24,13 @@ public class Fila
      * @param numeros que el cliente a elegido.
      * @param el cliente que hace la reserva.
      */
-    public boolean reservaAsientos(int[] numeros){
+    public boolean reservaAsientos(int[] numeros, Cliente cliente){
         boolean posible = true;
         for( int numero : numeros ){
-            if( asientos[numero-1].estaDisponible() && posible )
+            if( asientos[numero-1].estaDisponible() && posible ){
                 asientos[numero-1].aceptaReserva();
+                asientos[numero-1].setCliente(cliente);
+            }
             else
                 posible = false;
         }

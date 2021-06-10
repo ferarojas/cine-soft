@@ -2,8 +2,8 @@
 comment0.params=cantidad
 comment0.target=Fila(int)
 comment0.text=\r\n\ @param\ cantidad\ de\ asientos\ de\ esta\ fila.\r\n
-comment1.params=numeros
-comment1.target=boolean\ reservaAsientos(int[])
+comment1.params=numeros\ cliente
+comment1.target=boolean\ reservaAsientos(int[],\ Cliente)
 comment1.text=\r\n\ Reserva\ todos\ si\ estan\ disponibles;\ sino\ ninguno.\r\n\ @param\ numeros\ que\ el\ cliente\ a\ elegido.\r\n\ @param\ el\ cliente\ que\ hace\ la\ reserva.\r\n
 comment2.params=numero
 comment2.target=Asiento\ buscaAsientoPorNumero(int)

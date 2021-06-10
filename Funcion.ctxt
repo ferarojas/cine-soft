@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=sala\ pelicula\ fecha
 comment0.target=Funcion(Sala,\ java.lang.String,\ Fecha)
-comment1.params=numeroDeFila\ numerosDeAsientos
-comment1.target=boolean\ reservaAsientos(int,\ int[])
+comment1.params=numeroDeFila\ numerosDeAsientos\ cliente
+comment1.target=boolean\ reservaAsientos(int,\ int[],\ Cliente)
 comment10.params=
 comment10.target=java.lang.String\ getPelicula()
 comment11.params=pelicula

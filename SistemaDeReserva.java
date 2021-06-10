@@ -16,9 +16,9 @@ public class SistemaDeReserva
         funciones = new ArrayList<>();
     }
 
-    public boolean reservaAsientos(Funcion funcion, int numeroDeFila, int[] numerosDeAsientos){
+    public boolean reservaAsientos(Funcion funcion, int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){
 
-        return funcion.reservaAsientos(numeroDeFila, numerosDeAsientos);
+        return funcion.reservaAsientos(numeroDeFila, numerosDeAsientos, cliente);
     }
 
     public boolean cancelaReserva(Funcion funcion, Cliente cliente)

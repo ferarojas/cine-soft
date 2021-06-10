@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=SistemaDeReserva()
-comment1.params=funcion\ numeroDeFila\ numerosDeAsientos
-comment1.target=boolean\ reservaAsientos(Funcion,\ int,\ int[])
+comment1.params=funcion\ numeroDeFila\ numerosDeAsientos\ cliente
+comment1.target=boolean\ reservaAsientos(Funcion,\ int,\ int[],\ Cliente)
 comment10.params=fila\ cantidad
 comment10.target=java.util.ArrayList\ encuetraAsientosContiguos(int,\ int)
 comment11.params=args

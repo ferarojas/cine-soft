@@ -16,6 +16,7 @@ public class SistemaDeReservaTest
     private SistemaDeReserva sistemaD1;
     private Sala sala1;
     private Funcion funcion1;
+    private Cliente cliente1;
 
     /**
      * Default constructor for test class SistemaDeReservaTest
@@ -36,6 +37,7 @@ public class SistemaDeReservaTest
         sala1 = new Sala("Zalamea", 8, 12);
         funcion1 = new Funcion(sala1, "behind", new Fecha());
         sistemaD1.agregaFuncion(funcion1);
+        cliente1 = new Cliente("pedro", "123");  
     }
 
     /**
@@ -52,7 +54,7 @@ public class SistemaDeReservaTest
     public void testReservaAsientos()
     {
         int[] numerosDeAsientos = {1,3,5};        
-        assertEquals(true, sistemaD1.reservaAsientos(funcion1, 1, numerosDeAsientos));
+        assertEquals(true, sistemaD1.reservaAsientos(funcion1, 1, numerosDeAsientos, cliente1));
     }
 }
 

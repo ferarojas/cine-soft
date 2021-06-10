@@ -14,6 +14,7 @@ import org.junit.Test;
 public class SalaTest
 {
     private Sala sala1;
+    private Cliente cliente1;
 
     /**
      * Default constructor for test class SalaTest
@@ -31,6 +32,7 @@ public class SalaTest
     public void setUp()
     {
         sala1 = new Sala("Zalamea", 8, 12);
+        cliente1 = new Cliente("pedro", "123");  
     }
 
     /**
@@ -47,7 +49,7 @@ public class SalaTest
     public void testAceptaReserva()
     {
         int[] numerosDeAsientos = {1,3,5};
-        assertEquals(true, sala1.aceptaReserva(3, numerosDeAsientos));
+        assertEquals(true, sala1.aceptaReserva(3, numerosDeAsientos, cliente1));
     }
 }
 

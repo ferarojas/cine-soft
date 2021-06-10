@@ -23,15 +23,10 @@ public class Funcion
         clientes = new ArrayList<>();
     }
 
-    public boolean reservaAsientos(int numeroDeFila, int[] numerosDeAsientos){
-        boolean seReservo = sala.aceptaReserva(numeroDeFila, numerosDeAsientos);
-        if( seReservo == true ){
-            Asiento[] reservados = sala.getFilas().get(numeroDeFila-1).asientosReservados();
-            if( reservados.length > 0 ){
-                for( Asiento asiento : reservados )
-                    clientes.add(asiento.getCliente());
-            }
-        }
+    public boolean reservaAsientos(int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){
+        boolean seReservo = sala.aceptaReserva(numeroDeFila, numerosDeAsientos, cliente);
+        if( seReservo == true )
+            clientes.add(cliente);        
         return seReservo;
     }
 
