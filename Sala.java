@@ -59,6 +59,10 @@ public class Sala {
     public String getNombreSala() {
         return nombreSala;
     }
+    
+    public Fila getFila(int index){
+        return filas.get(index);
+    }
 
     public ArrayList<Fila> getFilas(){
         return filas;

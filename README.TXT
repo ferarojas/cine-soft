@@ -2,10 +2,12 @@ Project: Cine-Soft
 Authors: FRoM
 
 POR HACER:
-Implementar metodos de prueba de la clase Funcion.
+Que el cliente pueda reservar en mas de 1 fila..
 
 ESTA VERSION 
-Se implementaron metodos de prueba de la clase Sala.
+Refactorizar getDetallesReserva con solo nombre de telefono.
+Se refactorizaron reserva y consultaReserva en SistemaDeReserva.
+Se implementa toda la funcionalidad de Demo.
 
 DESCRIPCIÓN DE LA APLICACIÓN 
 El sistema de reserva de entradas para el cine debe almacenar reservas 

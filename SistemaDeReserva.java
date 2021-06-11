@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * Maneja el Sistema de Reservas.
  * 
@@ -7,56 +8,41 @@ import java.util.ArrayList;
  */
 public class SistemaDeReserva
 {
-    private static final int INDEX_PRUEBA = 0;
     private static final int FILA_PRUEBA = 0;
     private ArrayList<Funcion> funciones;
+    private HashMap<String, Reserva> reservas;
 
     public SistemaDeReserva()
     {
         funciones = new ArrayList<>();
+        reservas = new HashMap<>();
     }
 
     public boolean reservaAsientos(Funcion funcion, int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){
-
-        return funcion.reservaAsientos(numeroDeFila, numerosDeAsientos, cliente);
-    }
-
-    public boolean cancelaReserva(Funcion funcion, Cliente cliente)
-    {
-        ArrayList<Cliente> clientes = listaClientesFuncion(funcion);
-        for( Cliente clnt : clientes ){
-            if( clnt.getNombre().equals( cliente.getNombre() ) ){
-                Asiento[] asientos = funcion.getSala().getFilas().get(FILA_PRUEBA).asientosReservados();
-                if( asientos.length != 0 ){
-                    for( Asiento asiento : asientos ){
-                        if( asiento.getCliente().getNombre().equals( cliente.getNombre() ) )
-                            asiento.cancelaReserva();
-                    }
-                }                
-            }
-        }
-        return false;        
+        boolean seReservo = funcion.reservaAsientos(numeroDeFila, numerosDeAsientos, cliente);
+        if( seReservo ){
+            Reserva reserva = new Reserva(funcion, numeroDeFila, numerosDeAsientos, cliente);
+            reservas.put(cliente.getTelefono(), reserva);
+        }            
+        return seReservo;
     }
 
     /**
-     * Obtiene informacion de reserva para un cliente y funcion de prueba.
+     * Obtiene informacion de reserva para un cliente y funcion.
+     * @param el telefono del cliente; actua como clave de busqueda.
      */
-    public String getDetallesReserva(Funcion funcion, String nombre)
+    public String getDetallesReserva(String telefono)
     {
-        String detalles = "";
-        ArrayList<Cliente> clientesFuncion = funcion.getClientes();
-        if( clientesFuncion.size() == 0 )
-            return "Esta funcion no tiene reservas.";
-//         Cliente cliente = clientesFuncion.get(INDEX_PRUEBA);           
-        Asiento[] asientos = funcion.getSala().getFilas().get(FILA_PRUEBA).asientosReservados();
-        if( asientos.length != 0 ){
-            detalles = "Su reserva: Fila "+ (FILA_PRUEBA+1) +" - Asientos: ";
-            for( Asiento asiento : asientos ){
-                if( asiento.getCliente().getNombre().equals( nombre ) )
-                    detalles += asiento.getNumero() +"  ";
-            }
-        }
+        String detalles = null;
+        Reserva reserva = reservas.get(telefono);
+        if( reserva != null )
+            detalles = reserva.getDetalles();
         return detalles;
+    }
+
+    public Reserva cancelaReserva(String telefono)
+    {
+        return reservas.remove(telefono);
     }
 
     public ArrayList<Funcion> getFuncionesXtitulo(String titulo)
@@ -70,18 +56,18 @@ public class SistemaDeReserva
         return funcionesXtitulo;
     }
 
-    public ArrayList<Funcion> getFuncionesXfecha(String fecha){
+    public ArrayList<Funcion> getFuncionesXDia(int dia){
         ArrayList<Funcion> funcionesXfecha = new ArrayList<>();
         for( Funcion fncn : funciones ){
-            if( fncn.getStringFecha().equals(fecha) ){
+            if( fncn.getFecha().getDiaDelMes() == dia ){
                 funcionesXfecha.add( fncn );
             }            
         }
         return funcionesXfecha;
     }
-    
+
     public ArrayList<Funcion> getFunciones(){
-        
+
         return funciones;
     }
 

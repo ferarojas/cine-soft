@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=funcion\ numeroDeFila\ numerosDeAsientos\ cliente
+comment0.target=Reserva(Funcion,\ int,\ int[],\ Cliente)
+comment1.params=
+comment1.target=java.lang.String\ getDetalles()
+numComments=2

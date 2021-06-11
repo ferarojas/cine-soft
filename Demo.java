@@ -43,14 +43,18 @@ public class Demo
         return opcion;
     }
 
-    private void muestraFunciones(){
+    private void muestraFunciones( ArrayList<Funcion> funciones ){
         int index = 1;
-        for( Funcion funcion : funciones ){
-            System.out.println( index +"> "+ funcion.getDetalles() );
-            index++;
+        if( funciones.size() > 0 ){
+            for( Funcion funcion : funciones ){
+                System.out.println( index +"> "+ funcion.getDetalles() );
+                index++;
+            }
         }
+        else
+            System.out.println( "No hay titulos con esa clave" );        
     }
-    
+
     private Funcion getFuncion(){
         System.out.print("Funcion? ");
         int indexFuncion = lector.nextInt();
@@ -63,7 +67,7 @@ public class Demo
         Sala sala = funcion.getSala();
         ArrayList<Fila> filas = sala.getFilas();
         int indexFila = 1;
-        System.out.println("Asientos disponibles" );        
+        System.out.println("Asientos disponibles");
         for(Fila fila : filas ){
             Asiento[] disponibles = fila.asientosDisponibles();
             System.out.println("Fila "+ indexFila );
@@ -85,9 +89,19 @@ public class Demo
             nAsiento[i] = lector.nextInt();
         }
         Cliente cliente = getCliente();
-        sistemaD1.reservaAsientos(funcion, numeroDeFila, nAsiento, cliente);        
+        if( sistemaD1.reservaAsientos(funcion, numeroDeFila, nAsiento, cliente) ){
+            System.out.println("En "+ funcion.getDetalles());
+            System.out.print(cliente.getNombre() +" reservo en fila "+ numeroDeFila
+                +" asientos");
+            for(int i=0; i<cantidad; i++){
+                System.out.print(" "+ nAsiento[i]);
+            }
+            System.out.println();
+        }
+        else
+            System.out.println("Por alguna razon no se completo la reserva");
     }
-    
+
     public Cliente getCliente(){
         System.out.print("Su nombre? ");
         String nombre = lector.next();
@@ -98,21 +112,44 @@ public class Demo
     }
 
     private void consultaReserva(){
-        System.out.print("Su nombre? ");
-        String nombre = lector.next();
-        System.out.println(sistemaD1.getDetallesReserva(getFuncion(), nombre));
+        System.out.print("Su telefono? ");
+        String telefono = lector.next();
+        if( sistemaD1.getDetallesReserva(telefono) != null )
+            System.out.println(sistemaD1.getDetallesReserva(telefono));
+        else
+            System.out.println("No se encontro reserva para esa clave.");
     }
 
     private void cancelaReserva(){
-        ;
+        System.out.print("Su telefono? ");
+        String telefono = lector.next();
+        Reserva reserva = sistemaD1.cancelaReserva(telefono);
+        if( reserva != null )
+            System.out.println(reserva.getDetalles() +"\nCANCELADA!");
+        else
+            System.out.println("No se encontro reserva para esa clave.");        
     }
 
     private void funcionesXtitulo(){
-        ;         
+        ArrayList<Funcion> funciones = sistemaD1.getFuncionesXtitulo(getTitulo());         
+        muestraFunciones( funciones );
     }
 
-    private void funcionesXFecha(){
-        ;
+    private String getTitulo(){
+        System.out.print("Alguna clave del titulo? ");
+        String titulo = lector.next();
+        return titulo;        
+    }
+
+    private void funcionesXDia(){
+        ArrayList<Funcion> funciones = sistemaD1.getFuncionesXDia(getDia());
+        muestraFunciones( funciones );        
+    }
+
+    private int getDia(){
+        System.out.print("Dia? ");
+        int dia = lector.nextInt();
+        return dia;
     }
 
     private boolean procesaOpcion(int opcion){
@@ -122,7 +159,7 @@ public class Demo
             return true;
             case 1:
             System.out.println("1. Funciones");
-            muestraFunciones();
+            muestraFunciones( funciones );
             break;
             case 2:
             System.out.println("2. Reservar asientos");
@@ -141,8 +178,8 @@ public class Demo
             funcionesXtitulo();
             break;
             case 6:
-            System.out.println("6. Funciones por Fecha");
-            funcionesXFecha();
+            System.out.println("6. Funciones por Dia");
+            funcionesXDia();
             break;
             case 7:
             System.out.println("\f");
@@ -158,9 +195,9 @@ public class Demo
         System.out.println("2. Reservar asientos");
         System.out.println("3. Consultar reserva");
         System.out.println("4. Cancelar reserva");
-        //         System.out.println("5. Funciones por Titulo"); 
-        //         System.out.println("6. Funciones por Fecha");
-        //         System.out.println("7. Regresar a este menu");        
+        System.out.println("5. Funciones por Titulo"); 
+        System.out.println("6. Funciones por Dia");
+        System.out.println("7. Regresar a este menu");        
         System.out.println("0. Terminar");        
     }
 
