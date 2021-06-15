@@ -110,7 +110,7 @@ public class SalaGUI extends JFrame
     public static void main(String[] args){
         SwingUtilities.invokeLater(new Runnable() {
                 public void run() {        
-                    new SalaGUI( new Funcion(new Sala("lac", 12, 14), "behind", new Fecha(2021,4,14,18,30)) );
+                    new SalaGUI( new Funcion(new Sala("zalamea", 8, 10), "behind", new Fecha(2021,4,14,18,30)) );
                 }                
             });               
     }

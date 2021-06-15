@@ -1,3 +1,5 @@
+import java.awt.Container;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.GroupLayout;
@@ -7,7 +9,8 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
-
+import javax.swing.JTextArea;
+import javax.swing.JPanel;
 /**
  *
  * @author frojas
@@ -35,22 +38,48 @@ public class ClienteGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
+        Container contenido = getContentPane();
         jlNombre = new JLabel();
-        jtfNombre = new JTextField();
+        jlNombre.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
+        jtfNombre = new JTextField("                        ");
+        jtfNombre.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
+        jlTelefono = new JLabel();
+        jlTelefono.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
+        jtfTelefono = new JTextField("                        ");
+        jtfTelefono.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
         jlEmail = new JLabel();
-        jtfEmail = new JTextField();
-        jlCelular = new JLabel();
-        jtfTelefono = new JTextField();
-        jSeparator1 = new JSeparator();
+        jlEmail.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
+        jtfEmail = new JTextField("                        ");
+        jtfEmail.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
         jbGuardar = new JButton();
+        jbGuardar.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
         jbOtro = new JButton();
+        jbOtro.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
         jbCancelar = new JButton();
+        jbCancelar.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));        
+        jpDatos = new JPanel();
+        jpControles = new JPanel();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        jtaFuncion = new JTextArea("FUNCION\n"+ funcion.getDetalles());
+        jtaFuncion.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 18));
+        jtaFuncion.setEditable(false);
+        jtaFuncion.setVisible(true);
+
+        jpDatos.add(jlNombre);
+        jpDatos.add(jtfNombre);
+        jpDatos.add(jlTelefono);
+        jpDatos.add(jtfTelefono);
+        jpDatos.add(jlEmail);
+        jpDatos.add(jtfEmail);
+        
+        jpControles.add(jbGuardar);
+        jpControles.add(jbOtro);
+        jpControles.add(jbCancelar);        
+//         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         jlNombre.setText("Nombre");
         jlEmail.setText("e-mail");
-        jlCelular.setText("Celular");
+        jlTelefono.setText("Celular");
 
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new ActionListener() {
@@ -72,62 +101,13 @@ public class ClienteGUI extends javax.swing.JFrame {
                     jbCancelarActionPerformed(evt);
                 }
             });
+            
+        contenido.add(jtaFuncion, BorderLayout.NORTH);
+        contenido.add(jpDatos, BorderLayout.CENTER);
+        contenido.add(jpControles, BorderLayout.SOUTH);   
 
-        GroupLayout layout = new GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                            .addComponent(jlEmail)
-                            .addComponent(jlNombre))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                            .addComponent(jtfEmail)
-                            .addComponent(jtfNombre)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbOtro)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbCancelar)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                            .addComponent(jlCelular))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                            .addComponent(jtfTelefono))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlNombre)
-                    .addComponent(jtfNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlEmail)
-                    .addComponent(jtfEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlCelular)
-                    .addComponent(jtfTelefono, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbGuardar)
-                    .addComponent(jbOtro)
-                    .addComponent(jbCancelar))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        
+        setLocation( 100, 200 );
+        setSize( 200, 300 );        
         setVisible(true);
         pack();
     }// </editor-fold>                        
@@ -144,8 +124,7 @@ public class ClienteGUI extends javax.swing.JFrame {
         Cliente cliente = new Cliente(jtfNombre.getText(), jtfTelefono.getText());
         Fabrica.fabricaEscenario();
         SistemaDeReserva sistemaD1 = Fabrica.getSistemaDeReserva();
-        sistemaD1.reservaAsientos(funcion, numeroDeFila, numerosDeAsientos, cliente);
-        
+        sistemaD1.reservaAsientos(funcion, numeroDeFila, numerosDeAsientos, cliente);        
     }                                         
 
     /**
@@ -171,23 +150,24 @@ public class ClienteGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-//         java.awt.EventQueue.invokeLater(new Runnable() {
-//                 public void run() {
-//                     new ClienteGUI().setVisible(true);
-//                 }
-//             });
+        //         java.awt.EventQueue.invokeLater(new Runnable() {
+        //                 public void run() {
+        //                     new ClienteGUI().setVisible(true);
+        //                 }
+        //             });
     }
 
-    // Variables declaration - do not modify                     
-    private JSeparator jSeparator1;
     private JButton jbGuardar;
     private JButton jbOtro;
     private JButton jbCancelar;
-    private JLabel jlCelular;
+    private JLabel jlTelefono;
     private JLabel jlEmail;
     private JLabel jlNombre;
     private JTextField jtfTelefono;
     private JTextField jtfEmail;
     private JTextField jtfNombre;
+    private JTextArea jtaFuncion;    
+    private JPanel jpDatos;
+    private JPanel jpControles;
     // End of variables declaration                   
 }
