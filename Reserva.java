@@ -1,6 +1,7 @@
 
 /**
- * Reserva 
+ * Reserva conserva copia de los datos de una reserva para facilitar
+ * y agilizar consultas.
  * 
  * @author  FRoM
  * @version 2021
@@ -11,6 +12,7 @@ public class Reserva
     private Funcion funcion;
     int numeroDeFila;
     int[] numerosDeAsientos;
+    
     public Reserva(Funcion funcion, int numeroDeFila, int[] numerosDeAsientos, Cliente cliente){
         this.cliente = cliente;
         this.funcion = funcion;
