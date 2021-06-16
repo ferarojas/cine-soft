@@ -75,8 +75,9 @@ public class ClienteGUI extends javax.swing.JFrame {
         jpControles.add(jbGuardar);
         jpControles.add(jbOtro);
         jpControles.add(jbCancelar);        
-//         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
         jlNombre.setText("Nombre");
         jlEmail.setText("e-mail");
         jlTelefono.setText("Celular");

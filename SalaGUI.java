@@ -43,11 +43,11 @@ public class SalaGUI extends JFrame
 
     private ArrayList<JCheckBox> getAsientos(Fila fila){
         Asiento[] asientos = fila.getAsientos();
-        ArrayList<JCheckBox> jchbAsientos = new ArrayList<>();
+        ArrayList<JCheckBox> jchbAsientosFila = new ArrayList<>();
         for( Asiento asiento : asientos ){
-            jchbAsientos.add( new JCheckBox() );
+            jchbAsientosFila.add( new JCheckBox() );
         }        
-        return jchbAsientos;
+        return jchbAsientosFila;
     }
 
     public void makeFrame()
@@ -83,7 +83,7 @@ public class SalaGUI extends JFrame
 
         JPanel flow = new JPanel();
         for( Fila fila : filas ){
-            ArrayList<JCheckBox> jchbAsientos = getAsientos(fila);
+            jchbAsientos = getAsientos(fila);
             JPanel jpFila = new JPanel();
             for( JCheckBox chb : jchbAsientos )
                 jpFila.add( chb );
@@ -101,7 +101,7 @@ public class SalaGUI extends JFrame
         contenido.add(jspAsientos, BorderLayout.CENTER);
         contenido.add(jpControles, BorderLayout.SOUTH);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocation( 100, 200 );
         setSize( ANCHO, ALTO );
         setVisible( true );
@@ -122,7 +122,7 @@ public class SalaGUI extends JFrame
     private JButton jbAbout;
     private JTextArea jtaFuncion;
     private JPanel jpControles;    
-    private ArrayList<JCheckBox> jbAsientos; 
+    private ArrayList<JCheckBox> jchbAsientos; 
     private JPanel jpAsientos;
     private JScrollPane jspAsientos;    
 }
